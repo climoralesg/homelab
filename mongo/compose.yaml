@@ -1,0 +1,16 @@
+services:
+  mongodb:
+    container_name: "mongodb-local"
+    image: mongo:9.0.4
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: passroot
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - "3308:27017"
+    mem_limit: 5g
+
+volumes:
+  mongodb-data:

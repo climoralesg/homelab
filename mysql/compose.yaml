@@ -1,0 +1,15 @@
+services:
+  mysqldb:
+    container_name: "mysql-local"
+    image: mysql:9.7 
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: passroot
+    volumes:
+      - mysqldb-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+    mem_limit: 5g
+
+volumes:
+  mysqldb-data:
