@@ -5,6 +5,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: passroot
+      TZ: America/Santiago
     volumes:
       - mysqldb-data:/var/lib/mysql
     ports:
