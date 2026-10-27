@@ -1,0 +1,15 @@
+services:
+  redis:
+    container_name: redis-local
+    image: redis:8.10.2
+    restart: unless-stopped
+    command: ["redis-server", "--save", "60", "1", "--loglevel", "warning"]
+    ports:
+      - "6380:6379"
+    mem_limit: 5g
+
+    volumes:
+      - redis-data:/data
+    
+  volume:
+    redis-data

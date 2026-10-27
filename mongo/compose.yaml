@@ -12,5 +12,5 @@ services:
       - "3308:27017"
     mem_limit: 5g
 
-volumes:
-  mongodb-data:
+  volume:
+    mongodb-data
